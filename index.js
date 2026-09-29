@@ -264,9 +264,7 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 });
-import express from 'express';
-const app = express();
-const port = process.env.PORT || 3000;
+
 
 
 // Đường dẫn chính của trang web: https://gambling-haanhstore-1.onrender.com/
