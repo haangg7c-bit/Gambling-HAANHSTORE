@@ -264,7 +264,7 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 });
-const port = process.env.PORT || 3000;
+
 
 
 
@@ -272,7 +272,7 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send('Bot Tai Xiu dang hoat dong 24/7 tai https://gambling-haanhstore-1.onrender.com/');
 });
-
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Web server dang chay va san sang tai https://gambling-haanhstore-1.onrender.com/ trên cổng ${port}`);
 });
