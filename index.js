@@ -19,9 +19,6 @@ dotenv.config();
 
 // Web server chống ngủ trên Render
 const app = express();
-const PORT = process.env.PORT || 3000;
-app.get('/', (req, res) => res.send('Bot đang hoạt động 24/7!'));
-app.listen(PORT, () => console.log(`Web server chạy trên cổng ${PORT}`));
 
 const client = new Client({
     intents: [
