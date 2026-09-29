@@ -78,7 +78,8 @@ client.once('ready', async () => {
                 ))
     ].map(command => command.toJSON());
 
-    const rest = new REST({ version: '10' }).setToken('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.G5FJg2.kpiSqWaBa0mAi3pmNIACLdDjQzc9KFUbuCkr9I'
+    const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
+('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.G5FJg2.kpiSqWaBa0mAi3pmNIACLdDjQzc9KFUbuCkr9I'
     try {
         await rest.put(Routes.applicationCommands(client.user.id), { body: commands });
         console.log('Đăng ký Slash Commands thành công!');
