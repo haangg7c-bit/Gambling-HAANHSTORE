@@ -264,6 +264,7 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 });
+const port = process.env.PORT || 3000;
 
 
 
