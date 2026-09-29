@@ -28,9 +28,9 @@ const client = new Client({
     ],
 });
 
-// Cấu hình ID Kênh Admin và ID Admin (Đã điền sẵn ID kênh từ link của ông)
+// Cấu hình ID Kênh Admin và ID Admin
 const ADMIN_CHANNEL_ID = '1553738938810638356'; 
-const ADMIN_ROLE_OR_USER_ID = 'ĐIỀN_ID_DISCORD_CỦA_ÔNG_VÀO_ĐÂY'; // Thay ID Discord của ông vào đây để có quyền admin
+const ADMIN_ROLE_OR_USER_ID = 'ĐIỀN_ID_DISCORD_CỦA_ÔNG_VÀO_ĐÂY';
 
 const balances = new Map();
 const histories = new Map();
@@ -74,7 +74,7 @@ client.once('ready', async () => {
                     { name: 'Ngẫu nhiên', value: 'random' }
                 ))
     ].map(command => command.toJSON());
-    const rest = new REST({ version: '10' }).setToken('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.G5FJg2.kpiSqWaBa0mAi3pmNIACLdDjQzc9KFUbuCkr9I');
+    const rest = new REST({ version: '10' }).setToken('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.GLKv-o.fiTT1lrMGYocRKONjqCGWN-3VR34PhHC9PhmZU');
     try {
         await rest.put(Routes.applicationCommands(client.user.id), { body: commands });
         console.log('Đăng ký Slash Commands thành công!');
@@ -262,18 +262,14 @@ client.on('interactionCreate', async (interaction) => {
     }
 });
 
-
-
-
-// Đường dẫn chính của trang web: https://gambling-haanhstore-1.onrender.com/
+// Web server cấu hình chuẩn, chỉ định nghĩa port duy nhất một lần
 app.get('/', (req, res) => {
-  res.send('Bot Tai Xiu dang hoat dong 24/7 tai https://gambling-haanhstore-1.onrender.com/');
+    res.send('Bot Tai Xiu dang hoat dong 24/7!');
 });
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Web server dang chay va san sang tai https://gambling-haanhstore-1.onrender.com/ trên cổng ${port}`);
+    console.log(`Web server dang chay tren cong ${port}`);
 });
 
 client.login('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.GLKv-o.fiTT1lrMGYocRKONjqCGWN-3VR34PhHC9PhmZU');
-
-
