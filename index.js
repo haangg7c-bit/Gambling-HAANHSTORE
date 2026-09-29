@@ -264,6 +264,18 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 });
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Đường dẫn chính của trang web: https://gambling-haanhstore-1.onrender.com/
+app.get('/', (req, res) => {
+  res.send('Bot Tai Xiu dang hoat dong 24/7 tai https://gambling-haanhstore-1.onrender.com/');
+});
+
+app.listen(port, () => {
+  console.log(`Web server dang chay va san sang tai https://gambling-haanhstore-1.onrender.com/ trên cổng ${port}`);
+});
 
 client.login('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.G5FJg2.kpiSqWaBa0mAi3pmNIACLdDjQzc9KFUbuCkr9I');
 
