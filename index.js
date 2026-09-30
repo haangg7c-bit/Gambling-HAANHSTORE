@@ -17,9 +17,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Web server chống ngủ trên Render
 const app = express();
-
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -28,9 +26,8 @@ const client = new Client({
     ],
 });
 
-// Cấu hình ID Kênh Admin và ID Admin
 const ADMIN_CHANNEL_ID = '1553738938810638356'; 
-const ADMIN_ROLE_OR_USER_ID = 'ĐIỀN_ID_DISCORD_CỦA_ÔNG_VÀO_ĐÂY';
+const ADMIN_ROLE_OR_USER_ID = 'ĐIỀN_ID_DISCORD_CỦA_ÔNG_VÀO_ÂY';
 
 const balances = new Map();
 const histories = new Map();
@@ -74,7 +71,7 @@ client.once('ready', async () => {
                     { name: 'Ngẫu nhiên', value: 'random' }
                 ))
     ].map(command => command.toJSON());
-    const rest = new REST({ version: '10' }).setToken('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.GLKv-o.fiTT1lrMGYocRKONjqCGWN-3VR34PhHC9PhmZU');
+    const rest = new REST({ version: '10' }).setToken('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.GY4Uuw.MEtI10gJq0zHXzBDYmqe4HVRQyo4WBS9t7jnv8');
     try {
         await rest.put(Routes.applicationCommands(client.user.id), { body: commands });
         console.log('Đăng ký Slash Commands thành công!');
@@ -262,7 +259,6 @@ client.on('interactionCreate', async (interaction) => {
     }
 });
 
-// Web server cấu hình chuẩn, chỉ định nghĩa port duy nhất một lần
 app.get('/', (req, res) => {
     res.send('Bot Tai Xiu dang hoat dong 24/7!');
 });
@@ -273,4 +269,3 @@ app.listen(port, () => {
 });
 
 client.login('MTU1Mzc0MDk4ODg1NjU0MTI5Ng.GY4Uuw.MEtI10gJq0zHXzBDYmqe4HVRQyo4WBS9t7jnv8');
-
